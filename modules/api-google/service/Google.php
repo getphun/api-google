@@ -61,4 +61,9 @@ class Google {
             return $this->client['r-ga'];
         return $this->createAccount('r-ga',\Google_Service_Analytics::ANALYTICS_READONLY,$sa_file);
     }
+    
+    public function getGAClient(){
+        $ga_client = $this->forRAnalytics();
+        return new \Google_Service_Analytics($ga_client);
+    }
 }
